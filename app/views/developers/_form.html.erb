@@ -11,5 +11,13 @@
     </div>
   <% end %>
 
-  
+  <%= form_for :developer do |f| %>
+    <%= render "shared/errors", object: :developer %>
+    Username: <%= f.text_field :username %>
+    Name: <%= f.text_field :name %>
+    Email: <%= f.text_field :email %>
+    Password: <%= f.password_field :password_digest %>
+    Password Confirmation: <%= f.password_field :password_confirmation %>
+    <%= f.submit "Initiate New Developer" %>
+  <% end %>
 <% end %>
